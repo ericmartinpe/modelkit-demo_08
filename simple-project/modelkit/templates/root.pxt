@@ -1,0 +1,37 @@
+<%#INTERFACE
+parameter "name", :default=>"This Building Name"
+parameter "north_axis", :default=>30
+parameter "location", :default=>"CZ01"
+%>
+
+<%
+insert "general.pxt", :building_name=>name, :orientation=>north_axis
+insert "weather/#{location}.ddy"
+insert "geometry.pxt"
+insert "constructions.pxt"
+
+insert 'zoneloads/office.imf', :zone_name=>'Zone A'
+insert 'zoneloads/conference.imf', :zone_name=>'Zone B'
+insert 'zoneloads/classroom.imf', :zone_name=>'Zone C'
+
+insert 'zonehvac/vav.imf', :zone_name=>'Zone A', :heating_coil_type=>'HOTWATER'
+insert 'zonehvac/vav.imf', :zone_name=>'Zone B', :heating_coil_type=>'HOTWATER'
+insert 'zonehvac/vav.imf', :zone_name=>'Zone C', :heating_coil_type=>'HOTWATER'
+
+insert 'system/vav.imf',
+  :system_name=>'VAV-1',
+  :zone_names=>['Zone A', 'Zone B', 'Zone C'],
+  :heating_coil_type=>"HOTWATER",
+  :cooling_coil_type=>"CHILLEDWATER"
+
+insert 'system/hotwater.imf',
+  :system_name=>"HW",
+  :zone_names=>['VAV-1','Zone A', 'Zone B', 'Zone C']
+
+insert 'system/chilledwater.imf',
+  :system_name=>"CHW",
+  :zone_names=>['VAV-1']
+
+insert "outputs.pxt"
+
+%>

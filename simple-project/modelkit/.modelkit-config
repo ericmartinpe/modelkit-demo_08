@@ -1,0 +1,14 @@
+load-paths = '~\Documents\Modelkit Catalyst\templates\net-zero-templates\templates'  # Set to same directory as templates for backward compatibility
+
+[template-compose]
+annotate = true
+indent = "    "
+esc-line = "! "
+dirs = '~\Documents\Modelkit Catalyst\templates\net-zero-templates\templates'  # Must be an absolute path
+
+[energyplus-run]
+engine = 'C:\EnergyPlusV8-9-0'  # Must be an absolute path
+weather = '~\Documents\Modelkit Catalyst\examples\simple-project\modelkit\weather\CZ01.epw'  # Must be an absolute path
+readvars = true
+keep = false
+output-files = "eplusout.err; eplusout.rdd; eplusout.sql; eplustbl.htm; eplusvar.csv"

@@ -1,0 +1,83 @@
+
+ ! The following Location and Design Day data are produced as possible from the indicated data source.
+ ! Wind Speeds follow the indicated design conditions rather than traditional values (6.7 m/s heating, 3.35 m/s cooling)
+ ! No special attempts at re-creating or determining missing data parts (e.g. Wind speed or direction)
+ ! are done.  Therefore, you should look at the data and fill in any incorrect values as you desire.
+
+ Site:Location,
+  Chicago Ohare Intl Ap_IL_USA Design_Conditions,     !- Location Name
+      41.98,     !- Latitude {N+ S-}
+     -87.92,     !- Longitude {W- E+}
+      -6.00,     !- Time Zone Relative to GMT {GMT+/-}
+     201.00;     !- Elevation {m}
+
+ ! Using Design Conditions from "Climate Design Data 2009 ASHRAE Handbook"
+ ! Chicago Ohare Intl Ap_IL_USA Extreme Annual Wind Speeds, 1%=11.1m/s, 2.5%=9.4m/s, 5%=8.6m/s
+ ! Chicago Ohare Intl Ap_IL_USA Extreme Annual Temperatures, Max Drybulb=-23.7°C Min Drybulb=35.9°C
+
+ ! Chicago Ohare Intl Ap_IL_USA Annual Heating Design Conditions Wind Speed=4.9m/s Wind Dir=270
+ ! Coldest Month=JAN
+ ! Chicago Ohare Intl Ap_IL_USA Annual Heating 99.6%, MaxDB=-20°C
+ SizingPeriod:DesignDay,
+  Chicago Ohare Intl Ap Ann Htg 99.6% Condns DB,     !- Name
+          1,      !- Month
+         21,      !- Day of Month
+  WinterDesignDay,!- Day Type
+        -20,      !- Maximum Dry-Bulb Temperature {C}
+        0.0,      !- Daily Dry-Bulb Temperature Range {C}
+ DefaultMultipliers, !- Dry-Bulb Temperature Range Modifier Type
+           ,      !- Dry-Bulb Temperature Range Modifier Schedule Name
+    Wetbulb,      !- Humidity Condition Type
+        -20,      !- Wetbulb at Maximum Dry-Bulb {C}
+           ,      !- Humidity Indicating Day Schedule Name
+           ,      !- Humidity Ratio at Maximum Dry-Bulb {kgWater/kgDryAir}
+           ,      !- Enthalpy at Maximum Dry-Bulb {J/kg}
+           ,      !- Daily Wet-Bulb Temperature Range {deltaC}
+     98934.,      !- Barometric Pressure {Pa}
+        4.9,      !- Wind Speed {m/s} design conditions vs. traditional 6.71 m/s (15 mph)
+        270,      !- Wind Direction {Degrees; N=0, S=180}
+         No,      !- Rain {Yes/No}
+         No,      !- Snow on ground {Yes/No}
+         No,      !- Daylight Savings Time Indicator
+  ASHRAEClearSky, !- Solar Model Indicator
+           ,      !- Beam Solar Day Schedule Name
+           ,      !- Diffuse Solar Day Schedule Name
+           ,      !- ASHRAE Clear Sky Optical Depth for Beam Irradiance (taub)
+           ,      !- ASHRAE Clear Sky Optical Depth for Diffuse Irradiance (taud)
+       0.00;      !- Clearness {0.0 to 1.1}
+
+ ! Chicago Ohare Intl Ap Annual Cooling Design Conditions Wind Speed=5.2m/s Wind Dir=230
+ ! Hottest Month=JUL
+ ! Chicago Ohare Intl Ap_IL_USA Annual Cooling (DB=>MWB) .4%, MaxDB=33.3°C MWB=23.7°C
+ SizingPeriod:DesignDay,
+  Chicago Ohare Intl Ap Ann Clg .4% Condns DB=>MWB,     !- Name
+          7,      !- Month
+         21,      !- Day of Month
+  SummerDesignDay,!- Day Type
+       33.3,      !- Maximum Dry-Bulb Temperature {C}
+       10.5,      !- Daily Dry-Bulb Temperature Range {C}
+ DefaultMultipliers, !- Dry-Bulb Temperature Range Modifier Type
+           ,      !- Dry-Bulb Temperature Range Modifier Schedule Name
+    Wetbulb,      !- Humidity Condition Type
+       23.7,      !- Wetbulb at Maximum Dry-Bulb {C}
+           ,      !- Humidity Indicating Day Schedule Name
+           ,      !- Humidity Ratio at Maximum Dry-Bulb {kgWater/kgDryAir}
+           ,      !- Enthalpy at Maximum Dry-Bulb {J/kg}
+           ,      !- Daily Wet-Bulb Temperature Range {deltaC}
+     98934.,      !- Barometric Pressure {Pa}
+        5.2,      !- Wind Speed {m/s} design conditions vs. traditional 3.35 m/s (7mph)
+        230,      !- Wind Direction {Degrees; N=0, S=180}
+         No,      !- Rain {Yes/No}
+         No,      !- Snow on ground {Yes/No}
+         No,      !- Daylight Savings Time Indicator
+       ASHRAETau, !- Solar Model Indicator
+           ,      !- Beam Solar Day Schedule Name
+           ,      !- Diffuse Solar Day Schedule Name
+      0.455,      !- ASHRAE Clear Sky Optical Depth for Beam Irradiance (taub)
+      2.050;      !- ASHRAE Clear Sky Optical Depth for Diffuse Irradiance (taud)
+
+!   Site:WaterMainsTemperature,
+!    Correlation,             !- Calculation Method
+!    ,                        !- Temperature Schedule Name
+!    13.09,                   !- Annual Average Outdoor Air Temperature {C}
+!    6.32;                    !- Maximum Difference In Monthly Average Outdoor Air Temperatures {deltaC}

@@ -1,0 +1,13 @@
+
+Output:Variable,*,Site Outdoor Air Drybulb Temperature,hourly; !- Zone Average [C]
+Output:Variable,*,Zone Mean Air Temperature,hourly; !- Zone Average [C]
+
+
+
+Output:Variable,Zone A,Zone People Total Heating Rate,hourly; !- Zone Average [W]
+
+Output:Variable,Zone A,Zone Lights Total Heating Rate,hourly; !- Zone Average [W]
+
+Output:Variable,Zone A,Zone Electric Equipment Total Heating Rate,hourly; !- Zone Average [W]
+
+Output:Variable,Zone A,Zone Windows Total Heat Gain Rate,hourly; !- Zone Average [W]
