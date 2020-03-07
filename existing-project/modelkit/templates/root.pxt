@@ -3,6 +3,9 @@ parameter "thickness", :default=>0.15
 
 %>
 
+Output:SQLite,
+  SimpleAndTabular;                       !- Option Type
+
   Version,8.9;
 
 !-   ===========  ALL OBJECTS IN CLASS: SIMULATIONCONTROL ===========
